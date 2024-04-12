@@ -1,5 +1,5 @@
-﻿using ImagesApi.Interfaces;
-using ImagesApi.Models;
+﻿using Common.Models;
+using ImagesApi.Interfaces;
 using Newtonsoft.Json;
 using System.Data.Common;
 

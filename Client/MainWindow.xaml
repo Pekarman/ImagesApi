@@ -1,0 +1,28 @@
+﻿<Window x:Class="Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="449" Width="779"
+        Loaded="Window_Loaded">
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
+    <Grid>
+        <Button Content="Send image" Command="{Binding SendCommand}" HorizontalAlignment="Left" Margin="628,343,0,0" VerticalAlignment="Top" Height="55" Width="126"/>
+        <TextBox Text="{Binding Text}" HorizontalAlignment="Left" Margin="365,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Height="55"/>
+        <ListBox ItemsSource="{Binding Images}" Margin="0,0,46,132">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Text}" />
+                        <Image Source="{Binding ImageBytes}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Label Content="{Binding Message}" HorizontalAlignment="Left" Margin="40,343,0,0" VerticalAlignment="Top" Height="55" Width="246"/>
+    </Grid>
+</Window>

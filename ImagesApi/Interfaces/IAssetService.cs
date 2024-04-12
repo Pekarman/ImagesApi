@@ -1,4 +1,4 @@
-﻿using ImagesApi.Models;
+﻿using Common.Models;
 
 namespace ImagesApi.Interfaces
 {
